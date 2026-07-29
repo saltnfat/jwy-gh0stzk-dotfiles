@@ -93,6 +93,8 @@ in
         follow_mouse = 2; # mouse focuses keyboard input only when clicked
         float_switch_override_focus = 0;
         sensitivity = 0;
+        # disable hyprland's mouse accel
+        accel_profile = "flat";
         touchpad = {
           natural_scroll = true;
           disable_while_typing = true;

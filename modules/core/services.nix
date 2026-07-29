@@ -20,10 +20,10 @@ in
   hardware.keyboard.qmk.enable = true;
 
   services = {
-    clamav = {
-      daemon.enable = true;
-      updater.enable = true;
-    };
+    # clamav = {
+    #   daemon.enable = true;
+    #   updater.enable = true;
+    # };
     upower.enable = true; # noctalia shell battery
     libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer

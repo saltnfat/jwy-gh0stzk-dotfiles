@@ -93,7 +93,7 @@ in
       qtox
       qbittorrent
       #tribler # another torrent client
-      clamtk
+      #clamtk
       element-desktop
       cryfs
       cobang # qr scanner from webcam

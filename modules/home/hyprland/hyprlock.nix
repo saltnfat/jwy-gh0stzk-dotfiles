@@ -12,9 +12,7 @@ in
     enable = true;
     settings = {
       general = {
-        disable_loading_bar = true;
         hide_cursor = true;
-        no_fade_in = false;
       };
 
       ## Leaving background and image settings empty will give us a pure black screen (except for pass field)

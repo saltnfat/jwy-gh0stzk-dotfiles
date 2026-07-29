@@ -96,7 +96,7 @@
     iotop # disk io monitoring
     nvtopPackages.full # gpu monitoring
     wireshark # packet monitoring
-    clamav # antivirus
+    #clamav # antivirus
     sniffnet # user friendly network monitoring
 
     # nix utils

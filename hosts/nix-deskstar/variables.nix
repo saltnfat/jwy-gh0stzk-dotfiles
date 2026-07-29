@@ -112,7 +112,7 @@ _: {
 
     # Power options
     lockTimeout = 180;
-    screenTimeout = -1;
+    screenTimeout = 3700;
     gracePeriod = "300";
     suspendTimeout = 3600;
 

@@ -30,6 +30,7 @@ in
     enableCalendarEvents = true; # Calendar integration (khal)
 
     session = {
+      #wallpaperPath = "./wallpapers/beautifulmountainscape.jpg";
       pinnedApps = [
         "thunderbird"
         "steam"
