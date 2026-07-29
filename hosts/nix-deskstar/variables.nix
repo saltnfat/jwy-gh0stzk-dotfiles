@@ -106,7 +106,7 @@ _: {
     #monitor = DP-3, 3440x1440@174.96, auto, 1, bitdepth, 10, cm, hdredid, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
     #monitor = DP-3, 3440x1440@174.96, auto, 1, bitdepth, 10, vrr, 3
     extraMonitorSettings = "
-    monitor = DP-3, 3440x1440@174.96, auto, 1, bitdepth, 10, cm, hdredid, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
+    monitor = DP-3, 2560x1440@500.00, auto, 1, bitdepth, 10, cm, hdredid, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
 
     ";
 
