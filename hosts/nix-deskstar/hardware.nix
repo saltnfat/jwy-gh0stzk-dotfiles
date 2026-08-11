@@ -54,22 +54,22 @@
   boot.initrd.luks.devices."luks-47a2ecc1-c33b-4ec2-9476-66671f412f77".device =
     "/dev/disk/by-uuid/47a2ecc1-c33b-4ec2-9476-66671f412f77";
 
-  # swap partition
-  boot.initrd.luks.devices."aa3d21ed-9002-40fa-ad02-9c8dd556e8fe" = {
-    device = "/dev/disk/by-uuid/aa3d21ed-9002-40fa-ad02-9c8dd556e8fe";
-    # SSD optimisations
-    allowDiscards = true;
-    bypassWorkqueues = true;
-  };
-
-  swapDevices = [
-    {
-      device = "/dev/mapper/aa3d21ed-9002-40fa-ad02-9c8dd556e8fe";
-      randomEncryption.enable = true;
-    }
-  ];
-
-  boot.resumeDevice = "/dev/mapper/aa3d21ed-9002-40fa-ad02-9c8dd556e8fe";
+  # # swap partition
+  # boot.initrd.luks.devices."aa3d21ed-9002-40fa-ad02-9c8dd556e8fe" = {
+  #   device = "/dev/disk/by-uuid/aa3d21ed-9002-40fa-ad02-9c8dd556e8fe";
+  #   # SSD optimisations
+  #   allowDiscards = true;
+  #   bypassWorkqueues = true;
+  # };
+  #
+  # swapDevices = [
+  #   {
+  #     device = "/dev/mapper/aa3d21ed-9002-40fa-ad02-9c8dd556e8fe";
+  #     randomEncryption.enable = true;
+  #   }
+  # ];
+  #
+  # boot.resumeDevice = "/dev/mapper/aa3d21ed-9002-40fa-ad02-9c8dd556e8fe";
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -18,7 +18,7 @@
     # alternate options
     # libsForQt5.qt5compat
     kdePackages.qt5compat
-    libsForQt5.qt5.qtgraphicaleffects
+    #libsForQt5.qt5.qtgraphicaleffects
   ];
 
   # necessary environment variables

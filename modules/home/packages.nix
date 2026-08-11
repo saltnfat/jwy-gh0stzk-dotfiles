@@ -95,8 +95,10 @@ in
       #tribler # another torrent client
       #clamtk
       element-desktop
-      cryfs
-      cobang # qr scanner from webcam
+      # TODO: add cryfs back when they updated it to support FUSE 3 (FUSE 2 deprecated in Nixpkgs)
+      #cryfs
+      # TODO: add cobang back when issue fixed
+      #cobang # qr scanner from webcam
       motrix # download manager
 
     ];
