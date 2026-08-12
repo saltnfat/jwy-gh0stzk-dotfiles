@@ -11,6 +11,10 @@
       enable = false;
       enableExtensionPack = true;
     };
+    vmVariant.virtualisation = {
+      memorySize = 6000; # MiB
+      cores = 3; # use 3 cpu cores
+    };
   };
 
   programs = {

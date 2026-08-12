@@ -61,6 +61,12 @@ in
     shell = pkgs.${shell};
     ignoreShellProgramCheck = true;
   };
+  users.users.nixosvmtest = {
+    initialPassword = "vmtestuser";
+    isSystemUser = true;
+    group = "nixosvmtest";
+  };
+  users.groups.nixosvmtest = { };
   nix.settings.allowed-users = [ "${username}" ];
 
 }
