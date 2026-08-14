@@ -59,5 +59,5 @@ in
     #extraOptions = "!include ${config.sops.secrets.access-tokens.path}";
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "26.11";
 }

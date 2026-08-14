@@ -106,7 +106,17 @@ _: {
     #monitor = DP-3, 3440x1440@174.96, auto, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
     #monitor = DP-3, 3440x1440@174.96, auto, 1, bitdepth, 10, vrr, 3
     extraMonitorSettings = "
-    monitor = eDP-2, 2880x1800@120.00100, 0x0, 1.6, bitdepth, 10, cm, hdr, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
+      hl.monitor({
+          output   = \"eDP-2\",
+          mode     = \"2880x1800@120.00100\",
+          position = \"auto\",
+          scale    = 1.6,
+          bitdepth = 10,
+          cm       = \"hdr\",
+          sdrbrightness = \"1.15\",
+          sdrsaturation = \"0.80\",
+          vrr = 3,
+      })
 
     ";
 
@@ -137,7 +147,8 @@ _: {
 
     # Set Animation style
     # Available options are:
-    animChoice = ../../home/hyprland/animations/animations-def.nix;
+    animChoice = ../../modules/home/hyprland/animations/animations-def.nix;
+    #animChoice = ../../modules/home/hyprland/animations-end4.nix;
     #animChoice = ../../modules/home/hyprland/animations-end4.nix;
     #animChoice = ../../modules/home/hyprland/animations-end4-slide.nix;
     #animChoice = ../../modules/home/hyprland/animations-end-slide.nix;

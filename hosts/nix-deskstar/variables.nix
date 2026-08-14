@@ -107,7 +107,17 @@ _: {
     #monitor = DP-3, 3440x1440@174.96, auto, 1, bitdepth, 10, vrr, 3
     #monitor = DP-3, 2560x1440@500.00, auto, 1, bitdepth, 10, cm, hdredid, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
     extraMonitorSettings = "
-    monitor = DP-3, 2560x1440@500.00, auto, 1, bitdepth, 10, cm, srgb, sdrbrightness, 1.15, sdrsaturation, 0.80, vrr, 3
+      hl.monitor({
+          output   = \"DP-3\",
+          mode     = \"2560x1440@500.00\",
+          position = \"auto\",
+          scale    = \"auto\",
+          bitdepth = 10,
+          cm       = \"srgb\",
+          sdrbrightness = \"1.15\",
+          sdrsaturation = \"0.80\",
+          vrr = 3,
+      })
 
     ";
 
@@ -138,7 +148,7 @@ _: {
 
     # Set Animation style
     # Available options are:
-    animChoice = ../../home/hyprland/animations/animations-def.nix;
+    animChoice = ../../modules/home/hyprland/animations/animations-def.nix;
     #animChoice = ../../modules/home/hyprland/animations-end4.nix;
     #animChoice = ../../modules/home/hyprland/animations-end4-slide.nix;
     #animChoice = ../../modules/home/hyprland/animations-end-slide.nix;

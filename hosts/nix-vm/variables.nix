@@ -137,7 +137,7 @@ _: {
 
     # Set Animation style
     # Available options are:
-    animChoice = ../../home/hyprland/animations/animations-def.nix;
+    animChoice = ../../modules/home/hyprland/animations/animations-def.nix;
     #animChoice = ../../modules/home/hyprland/animations-end4.nix;
     #animChoice = ../../modules/home/hyprland/animations-end4-slide.nix;
     #animChoice = ../../modules/home/hyprland/animations-end-slide.nix;

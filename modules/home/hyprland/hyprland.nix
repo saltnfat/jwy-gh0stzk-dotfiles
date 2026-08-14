@@ -80,133 +80,139 @@ in
       enable = true;
     };
     settings = {
-      "$modifier" = "SUPER";
-      input = {
-        kb_layout = hyprKbLayout;
-        kb_options = [
-          #"grp:alt_caps_toggle"
-          #"caps:super"
-          "ctrl:nocaps"
-        ];
-        numlock_by_default = true;
-        repeat_delay = 300;
-        follow_mouse = 2; # mouse focuses keyboard input only when clicked
-        float_switch_override_focus = 0;
-        sensitivity = 0;
-        # disable hyprland's mouse accel
-        accel_profile = "flat";
-        touchpad = {
-          natural_scroll = true;
-          disable_while_typing = true;
-          scroll_factor = 0.8;
+
+      config = {
+        input = {
+          kb_layout = hyprKbLayout;
+          kb_options = "ctrl:nocaps";
+          numlock_by_default = true;
+          repeat_delay = 300;
+          follow_mouse = 2; # mouse focuses keyboard input only when clicked
+          float_switch_override_focus = 0;
+          sensitivity = 0;
+          # disable hyprland's mouse accel
+          accel_profile = "flat";
+          touchpad = {
+            natural_scroll = true;
+            disable_while_typing = true;
+            scroll_factor = 0.8;
+          };
+          scroll_factor = 2.3;
+        }
+        // lib.optionalAttrs (hyprKbVariant != "") { kb_variant = hyprKbVariant; };
+
+        gestures = {
+          gesture = [ "3, horizontal, workspace" ];
+          workspace_swipe_distance = 500;
+          workspace_swipe_invert = true;
+          workspace_swipe_min_speed_to_force = 30;
+          workspace_swipe_cancel_ratio = 0.5;
+          workspace_swipe_create_new = true;
+          workspace_swipe_forever = true;
         };
-        scroll_factor = 2.3;
-      }
-      // lib.optionalAttrs (hyprKbVariant != "") { kb_variant = hyprKbVariant; };
 
-      gestures = {
-        gesture = [ "3, horizontal, workspace" ];
-        workspace_swipe_distance = 500;
-        workspace_swipe_invert = true;
-        workspace_swipe_min_speed_to_force = 30;
-        workspace_swipe_cancel_ratio = 0.5;
-        workspace_swipe_create_new = true;
-        workspace_swipe_forever = true;
-      };
-
-      general = {
-        layout = "dwindle";
-        gaps_in = 12;
-        #gaps_out = 11;
-        gaps_out = 20;
-        border_size = 0;
-        resize_on_border = true;
-        "col.active_border" =
-          "rgb(${config.lib.stylix.colors.base08}) rgb(${config.lib.stylix.colors.base0C}) 45deg";
-        "col.inactive_border" = "rgb(${config.lib.stylix.colors.base01})";
-      };
-
-      misc = {
-        on_focus_under_fullscreen = 1;
-        layers_hog_keyboard_focus = true;
-        initial_workspace_tracking = 2;
-        mouse_move_enables_dpms = true;
-        key_press_enables_dpms = true;
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-        enable_swallow = false;
-        vrr = 2; # Variable Refresh Rate  Might need to set to 0 for NVIDIA/AQ_DRM_DEVICES
-        # Screen flashing to black momentarily or going black when app is fullscreen
-        # Try setting vrr to 0
-
-        #  Application not responding (ANR) settings
-        enable_anr_dialog = true;
-        anr_missed_pings = 15;
-      };
-
-      dwindle = {
-        preserve_split = true;
-        force_split = 2;
-      };
-
-      decoration = {
-        rounding = 5;
-        blur = {
-          enabled = true;
-          size = 5;
-          passes = 3;
-          ignore_opacity = false;
-          new_optimizations = true;
+        general = {
+          layout = "dwindle";
+          gaps_in = 12;
+          #gaps_out = 11;
+          gaps_out = 20;
+          border_size = 0;
+          resize_on_border = true;
+          # TODO - fix active_border?
+          "col.active_border" = "rgb(${config.lib.stylix.colors.base08})";
+          "col.inactive_border" = "rgb(${config.lib.stylix.colors.base01})";
         };
-        shadow = {
-          enabled = true;
-          range = 4;
-          render_power = 3;
-          color = "rgba(1a1a1aee)";
+
+        misc = {
+          on_focus_under_fullscreen = 1;
+          layers_hog_keyboard_focus = true;
+          initial_workspace_tracking = 2;
+          mouse_move_enables_dpms = true;
+          key_press_enables_dpms = true;
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
+          enable_swallow = false;
+          vrr = 2; # Variable Refresh Rate  Might need to set to 0 for NVIDIA/AQ_DRM_DEVICES
+          # Screen flashing to black momentarily or going black when app is fullscreen
+          # Try setting vrr to 0
+
+          #  Application not responding (ANR) settings
+          enable_anr_dialog = true;
+          anr_missed_pings = 15;
         };
-      };
 
-      ecosystem = {
-        no_donation_nag = true;
-        no_update_news = false;
-      };
+        dwindle = {
+          preserve_split = true;
+          force_split = 2;
+        };
 
-      cursor = {
-        sync_gsettings_theme = true;
-        no_hardware_cursors = 2; # change to 1 if want to disable
-        enable_hyprcursor = false;
-        warp_on_change_workspace = 0;
-        no_warps = true;
-      };
+        decoration = {
+          rounding = 5;
+          blur = {
+            enabled = true;
+            size = 5;
+            passes = 3;
+            ignore_opacity = false;
+            new_optimizations = true;
+          };
+          shadow = {
+            enabled = true;
+            range = 4;
+            render_power = 3;
+            color = "rgba(1a1a1aee)";
+          };
+        };
 
-      render = {
-        # Disabling as no longer supported
-        #explicit_sync = 1; # Change to 1 to disable
-        #explicit_sync_kms = 1;
-        direct_scanout = 1;
-        cm_auto_hdr = 2;
-      };
+        ecosystem = {
+          no_donation_nag = true;
+          no_update_news = false;
+        };
 
-      master = {
-        new_status = "master";
-        new_on_top = 1;
-        mfact = 0.5;
-      };
+        cursor = {
+          sync_gsettings_theme = true;
+          no_hardware_cursors = 2; # change to 1 if want to disable
+          enable_hyprcursor = false;
+          warp_on_change_workspace = 0;
+          no_warps = true;
+        };
 
-      # Ensure Xwayland windows render at integer scale; compositor scales them
-      xwayland = {
-        force_zero_scaling = true;
+        render = {
+          # Disabling as no longer supported
+          #explicit_sync = 1; # Change to 1 to disable
+          #explicit_sync_kms = 1;
+          direct_scanout = 1;
+          cm_auto_hdr = 2;
+        };
+
+        master = {
+          new_status = "master";
+          new_on_top = 1;
+          mfact = 0.5;
+        };
+
+        # Ensure Xwayland windows render at integer scale; compositor scales them
+        xwayland = {
+          force_zero_scaling = true;
+        };
       };
     };
 
-    extraConfig = "
-      monitor=,preferred,auto,auto
-      ${
-            extraMonitorSettings
-          }
-      # To enable blur on waybar uncomment the line below
-      # Thanks to SchotjeChrisman
-      #layerrule = blur,waybar
-    ";
+    extraConfig = ''
+      ${extraMonitorSettings}
+      require("uberOS.windowrules")
+      require("uberOS.exec-once")
+    '';
+
+    extraLuaFiles = {
+      "uberOS.windowrules" = {
+        autoLoad = false;
+        content = ./lua/windowrules.lua;
+      };
+
+      "uberOS.exec-once" = {
+        autoLoad = false;
+        content = ./lua/exec-once.lua;
+      };
+    };
   };
 }
